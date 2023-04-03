@@ -55,6 +55,7 @@ fn load_data() -> Profile{
 fn main() {
     // Create an instance of a profile
     let _test = load_data();
+
     // TODO fill in with json values
     let profile = Profile {
         rank: 2,
@@ -73,8 +74,8 @@ fn main() {
         variation: 22.0
     };
 
-
     // Add profile to profiles
     let profiles:Vec<Profile> = Vec::from([profile]);
     print_profiles(&profiles)
 }
+

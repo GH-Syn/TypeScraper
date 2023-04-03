@@ -27,6 +27,7 @@ except (
         urllib3.exceptions.MaxRetryError):
     print(" 😭 Website is down.")
     sys.exit(1)
+
 soup = bs(page.content, PARSER);
 print("Parsing")
 
@@ -69,11 +70,6 @@ for profile_ in profiles_as_soup[1:]:
     profile_data_all = profile_.find_all(class_="r")
     profile_data_all.append(profile_name)
     profile_data_sum = [i.text for i in profile_data_all]
-    """
-    if len(profile_data_sum) < 14:
-        profile_data_sum.append(None)  # TODO see why this doesn't work sometimes
-                                         # FIX: The reason why is because for some reason name isn't being indexed.
-     """
     profile = Profile(*profile_data_sum)
     profiles.append(profile)
 
