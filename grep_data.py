@@ -32,7 +32,7 @@ class Profile:
         self.wins = wins
         self.win_ratio = win_ratio
         self.marathon = marathon
-        self.last_race = last_race
+        self.last_race = datetime.date(*last_race.split("-"))
         self.name = self.omit_bracks(name)
 
     def omit_bracks(self, string) -> str:
