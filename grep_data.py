@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import date
 import requests
 from bs4 import BeautifulSoup as bs
@@ -84,4 +85,5 @@ for profile in profiles:
 
 
 print("Dumping data as hashmap")
-json.dump(profiles_as_hashmap, open("profiles.json", "w"))
+json.dump(profiles_as_hashmap, open(
+    os.path.join("src", "profiles.json"), "w"))

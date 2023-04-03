@@ -1,7 +1,6 @@
 #!ignore(unused_variables)
 use colored::*;
-use chrono::{DateTime, Utc};
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -43,7 +42,7 @@ fn print_profiles(profiles: &Vec<Profile>) {
 }
 
 fn load_data() -> Profile{
-    let mut file = File::open("data.json")
+    let mut file = File::open("../data.json")
         .expect("File not found");
     let mut contents = String::new();
     file.read_to_string(&mut contents)
@@ -55,13 +54,24 @@ fn load_data() -> Profile{
 
 fn main() {
     // Create an instance of a profile
+    let _test = load_data();
     let profile = Profile {
-        username: String::from("Joshua Rose"),
-        content: String::from("Donkeys are pretty cool!"),
-        replies: Vec::new(),
-        retweets: 3,
-        likes: 39
+        rank: 2,
+        racer: String::from("test").to_string(),
+        text_bests: 2.3,
+        races: 23,
+        texts: 231,
+        career: 21.3,
+        best_10: 22.1,
+        best_race: 22.1,
+        points: 22.3,
+        wins: 12,
+        win_ratio: 2,
+        marathon: 201,
+        last_race: String::from("test"),
+        variation: 22.0
     };
+
 
     // Add profile to profiles
     let profiles:Vec<Profile> = Vec::from([profile]);
