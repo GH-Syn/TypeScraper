@@ -1,77 +1,52 @@
 #!ignore(unused_variables)
 use colored::*;
-use serde::Deserialize;
-use serde_json::Result;
+use serde_json::{Result, from_reader};
+use std::io::BufReader;
 use std::fs::File;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize)]
-pub struct Profile {
-    pub rank: u16,
-    pub racer: String,
-    pub text_bests: f64,
-    pub races: u16,
-    pub texts: u16,
-    pub career: f64,
-    pub best_10: f64,
-    pub best_race: f64,
-    pub points: f64,
-    pub wins: u16,
-    pub win_ratio: u8,
-    pub marathon: u16,
-    pub last_race: String,
-    pub variation: f64
+#[derive(Debug, Serialize, Deserialize)]
+struct Profile {
+    rank: String,
+    racer: String,
+    text_bests: String,
+    races: String,
+    texts: String,
+    career: String,
+    best_10: String,
+    best_race: String,
+    points: String,
+    wins: String,
+    win_ratio: String,
+    marathon: String,
+    last_race: String,
+    name: String,
 }
 
-pub trait Summary {
-    fn summarize(&self) -> String;
+
+trait Summary {
+    fn summarize(&self, profile: &Profile) -> String;
 }
 
 impl Summary for Profile {
-    fn summarize(&self) -> String {
+    fn summarize(&self, profile: &Profile) -> String {
         format!(" 🏎️  Races: {}\n\n 📅 Latest: {}\n\n 🏆 Win: {}%",
-                self.races.to_string().red().bold(),
-                self.last_race.to_string().white().bold(),
-                self.win_ratio.to_string().yellow().bold())
+                profile.races.red().bold(),
+                profile.last_race.white().bold(),
+                profile.win_ratio.yellow().bold())
     }
 }
 
-fn print_profiles(profiles: &Vec<Profile>) {
-    /* Prints profiles with all of it's summarized properties */
-    for profile in profiles {
-        println!("{}", profile.summarize());
-    }
-}
-
-
-fn load_data(file: &str) -> File {
-    File::open(file).expect("File not found")
-}
+type ProfileList = std::collections::BTreeMap<String, Profile>;
 
 fn main() -> Result<()> {
-    // Create an instance of a profile
-    let _test = load_data("profiles.json");
+    let file = File::open("profiles.json").unwrap();
+    let reader = BufReader::new(file);
+    let profile_list: ProfileList = from_reader(reader).unwrap();
 
-    // TODO fill in with json values
-    let profile = Profile {
-        rank: 2,
-        racer: String::from("test"),
-        text_bests: 2.3,
-        races: 23,
-        texts: 231,
-        career: 21.3,
-        best_10: 22.1,
-        best_race: 22.1,
-        points: 22.3,
-        wins: 12,
-        win_ratio: 2,
-        marathon: 201,
-        last_race: String::from("test"),
-        variation: 22.0
-    };
-
-    // Add profile to profiles
-    let profiles:Vec<Profile> = Vec::from([profile]);
-    print_profiles(&profiles);
+    for (_, profile) in profile_list {
+        println!("{}", profile.summarize(&profile));
+    }
     Ok(())
 }
 
