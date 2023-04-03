@@ -3,7 +3,6 @@ use colored::*;
 use serde::Deserialize;
 use serde_json::Result;
 use std::fs::File;
-use std::io::prelude::*;
 
 #[derive(Debug, Deserialize)]
 pub struct Profile {
@@ -51,7 +50,7 @@ fn load_data(file: &str) -> File {
 
 fn main() -> Result<()> {
     // Create an instance of a profile
-    let _test = load_data("profiles.json");
+    let _test = load_data("profiles.jsondata.json");
 
     // TODO fill in with json values
     let profile = Profile {
