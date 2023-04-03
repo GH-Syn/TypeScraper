@@ -28,7 +28,7 @@ pub trait Summary {
 
 impl Summary for Profile {
     fn summarize(&self) -> String {
-        format!(" 🏎️ {}\n 📅 {}\n 🏆 {}",
+        format!(" 🏎️  Races: {}\n\n 📅 Latest: {}\n\n 🏆 Win: {}%",
                 self.races.to_string().red().bold(),
                 self.last_race.to_string().white().bold(),
                 self.win_ratio.to_string().yellow().bold())
@@ -44,18 +44,17 @@ fn print_profiles(profiles: &Vec<Profile>) {
 
 
 fn load_data(file: &str) -> File {
-    let file = File::open(file).expect("File not found");
-    return file;
+    File::open(file).expect("File not found")
 }
 
 fn main() -> Result<()> {
     // Create an instance of a profile
-    let _test = load_data("profiles.jsondata.json");
+    let _test = load_data("profiles.json");
 
     // TODO fill in with json values
     let profile = Profile {
         rank: 2,
-        racer: String::from("test").to_string(),
+        racer: String::from("test"),
         text_bests: 2.3,
         races: 23,
         texts: 231,
