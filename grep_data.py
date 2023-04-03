@@ -12,7 +12,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-print("Connecting")
 SCHEME = "https://";
 URL = SCHEME + 'typeracerdata.com';
 PARSER = "html.parser"
@@ -29,7 +28,6 @@ except (
     sys.exit(1)
 
 soup = bs(page.content, PARSER);
-print("Parsing")
 
 @dataclass
 class Profile:
@@ -73,8 +71,6 @@ for profile_ in profiles_as_soup[1:]:
     profile = Profile(*profile_data_sum)
     profiles.append(profile)
 
-print("Generating data")
-
 profiles_as_hashmap = {}
 
 for profile in profiles:
@@ -96,6 +92,5 @@ for profile in profiles:
         }
 
 
-print("Dumping data as hashmap")
 json.dump(profiles_as_hashmap, open(
     os.path.join("src", "profiles.json"), "w"))
