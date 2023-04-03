@@ -42,8 +42,7 @@ fn print_profiles(profiles: &Vec<Profile>) {
 }
 
 fn load_data() -> Profile{
-    let mut file = File::open("../data.json")
-        .expect("File not found");
+    let mut file = File::open("../data.json").expect("File not found");
     let mut contents = String::new();
     file.read_to_string(&mut contents)
         .expect("Something went wrong with reading the file");
