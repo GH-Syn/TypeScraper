@@ -29,9 +29,9 @@ pub trait Summary {
 impl Summary for Profile {
     fn summarize(&self) -> String {
         format!(" 🏎️ {}\n 📅 {}\n 🏆 {}",
-        self.races.to_string().red().bold(),
-        self.last_race.to_string().white().bold(),
-        self.win_ratio.to_string().yellow().bold())
+                self.races.to_string().red().bold(),
+                self.last_race.to_string().white().bold(),
+                self.win_ratio.to_string().yellow().bold())
     }
 }
 
