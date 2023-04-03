@@ -1,6 +1,6 @@
 import json
+from datetime import date
 import requests
-from datetime import datetime
 from bs4 import BeautifulSoup as bs
 from dataclasses import dataclass
 
@@ -18,7 +18,7 @@ class Profile:
 
     def __init__(self, rank, racer, text_bests, races, texts,
                  career, best_10, best_race, points, wins,
-                 win_ratio, marathon, last_race, name):
+                 win_ratio, last_race, marathon, name):
 
         self.rank = rank
         self.racer = racer
@@ -31,8 +31,9 @@ class Profile:
         self.points = points
         self.wins = wins
         self.win_ratio = win_ratio
+        year, month, day = last_race.split("-", 3); year, month, day = int(year), int(month), int(day)
         self.marathon = marathon
-        self.last_race = datetime.date(*last_race.split("-"))
+        self.last_race = date(year, month, day)
         self.name = self.omit_bracks(name)
 
     def omit_bracks(self, string) -> str:
@@ -77,7 +78,7 @@ for profile in profiles:
             "wins": profile.wins,
             "win_ratio": profile.win_ratio,
             "marathon": profile.marathon,
-            "last_race": profile.last_race,
+            "last_race": str(profile.last_race),
             "name": profile.name
         }
 
