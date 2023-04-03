@@ -1,16 +1,32 @@
+import sys
+import socket
+import urllib3
 import json
 import os
 from datetime import date
 import requests
 from bs4 import BeautifulSoup as bs
 from dataclasses import dataclass
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 print("Connecting")
 SCHEME = "https://";
 URL = SCHEME + 'typeracerdata.com';
 PARSER = "html.parser"
 
-page = requests.get(URL);
+try:
+    page = requests.get(URL);
+except (
+        ConnectionError,
+        requests.exceptions.ConnectionError,
+        urllib3.exceptions.NewConnectionError,
+        socket.gaierror,
+        urllib3.exceptions.MaxRetryError):
+    print(" 😭 Website is down.")
+    sys.exit(1)
 soup = bs(page.content, PARSER);
 print("Parsing")
 
