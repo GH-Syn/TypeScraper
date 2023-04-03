@@ -1,6 +1,7 @@
 #!ignore(unused_variables)
 use colored::*;
 use serde::Deserialize;
+use serde_json::Result;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -42,19 +43,15 @@ fn print_profiles(profiles: &Vec<Profile>) {
     }
 }
 
-fn load_data() -> Profile{
-    let mut file = File::open("../data.json").expect("File not found");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)
-        .expect("Something went wrong with reading the file");
 
-    let profile_data: Profile = serde_json::from_str(&contents).unwrap();
-    return profile_data;
+fn load_data(file: &str) -> File {
+    let file = File::open(file).expect("File not found");
+    return file;
 }
 
-fn main() {
+fn main() -> Result<()> {
     // Create an instance of a profile
-    let _test = load_data();
+    let _test = load_data("profiles.json");
 
     // TODO fill in with json values
     let profile = Profile {
@@ -76,6 +73,7 @@ fn main() {
 
     // Add profile to profiles
     let profiles:Vec<Profile> = Vec::from([profile]);
-    print_profiles(&profiles)
+    print_profiles(&profiles);
+    Ok(())
 }
 
