@@ -55,6 +55,7 @@ fn load_data() -> Profile{
 fn main() {
     // Create an instance of a profile
     let _test = load_data();
+    // TODO fill in with json values
     let profile = Profile {
         rank: 2,
         racer: String::from("test").to_string(),
