@@ -1,13 +1,13 @@
-import sys
-import socket
-import urllib3
-import json
-import os
-from datetime import date
-import requests
-from bs4 import BeautifulSoup as bs
-from dataclasses import dataclass
-import logging
+import sys;
+import socket;
+import urllib3;
+import json;
+import os;
+from datetime import date;
+import requests;
+from bs4 import BeautifulSoup as bs;
+from dataclasses import dataclass;
+import logging;
 
 
 logger = logging.getLogger(__name__);
@@ -66,7 +66,7 @@ class Profile:
             string.replace(")", "", 1);
         if "(" in string:
             string.replace("(", "", 1);
-        return string
+        return string;
 
 profiles = [];
 profiles_as_soup = soup.find_all("tr");
