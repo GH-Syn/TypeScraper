@@ -1,5 +1,5 @@
 | Language  | Purpose   | 
 |-------------- | -------------- |
-| Python    | Webscraping     |
-| Rust    | Data processing and output     |
+| Python  🐍 | Webscraping     |
+| Rust  🦀| Data processing and output     |
 
