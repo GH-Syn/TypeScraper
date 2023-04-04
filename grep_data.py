@@ -112,5 +112,10 @@ for profile in profiles:
         "name": profile.name,
     }
 
+file = os.path.join("src", "profiles.json")
+if os.path.basename(file) in os.listdir(os.path.dirname(file)):
+    print("Regenerating pre-existing data file.")
+else:
+    print("Generating data file fresh from source.")
 
 json.dump(profiles_as_hashmap, open(os.path.join("src", "profiles.json"), "w"), sort_keys=True, ensure_ascii=True)
