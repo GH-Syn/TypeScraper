@@ -1,6 +1,5 @@
 import sys
 import socket
-import urllib3
 import json
 import os
 from datetime import date
