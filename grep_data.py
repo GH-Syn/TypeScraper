@@ -89,7 +89,22 @@ for profile_ in profiles_as_soup[1:]:
     profile_data_all = profile_.find_all(class_="r")
     profile_data_all.append(profile_name)
     profile_data_sum = [i.text for i in profile_data_all]
-    profile = Profile(*profile_data_sum)
+    profile = Profile(
+            best_10=profile_data_sum[12],
+            best_race=profile_data_sum[2],
+            career=profile_data_sum[11],
+            last_race=profile_data_sum[4],
+            marathon=profile_data_sum[13],
+            name=profile_data_sum[5],
+            points=profile_data_sum[1],
+            racer=profile_data_sum[5],
+            races=profile_data_sum[6],
+            rank=profile_data_sum[9],
+            text_bests=profile_data_sum[10],
+            texts=profile_data_sum[3],
+            wins=profile_data_sum[2],
+            win_ratio=profile_data_sum[13]
+            )
     profiles.append(profile)
 
 profiles_as_hashmap = {}
