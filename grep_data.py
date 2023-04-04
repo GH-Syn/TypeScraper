@@ -114,4 +114,4 @@ for profile in profiles:
     }
 
 
-json.dump(profiles_as_hashmap, open(os.path.join("src", "profiles.json"), "w"))
+json.dump(profiles_as_hashmap, open(os.path.join("src", "profiles.json"), "w"), sort_keys=True, ensure_ascii=True)
