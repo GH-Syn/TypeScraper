@@ -21,9 +21,7 @@ try:
 except (
     ConnectionError,
     requests.exceptions.ConnectionError,
-    urllib3.exceptions.NewConnectionError,
     socket.gaierror,
-    urllib3.exceptions.MaxRetryError,
 ):
     print(" 😭 Website is down.")
     sys.exit(1)

@@ -23,7 +23,6 @@ struct Profile {
     name: String,
 }
 
-
 trait Summary {
     fn summarize(&self, profile: &Profile) -> String;
 }
