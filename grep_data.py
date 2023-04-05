@@ -10,6 +10,27 @@ import logging
 
 
 logger = logging.getLogger(__name__)
+logger.setLevel(0)
+logging.basicConfig
+logger.warning("TEST")
+
+LOG_LEVELS = {
+    "CRITICAL": "🚨 CRITICAL",
+    "ERROR": "❌ ERROR",
+    "WARNING": "⚠️ WARNING",
+    "INFO": "ℹ️ INFO",
+    "DEBUG": "🐞 DEBUG",
+}
+
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
+[logging.addLevelName(logging.getLevelName(level), emoji)
+ for (level, emoji) in LOG_LEVELS.items()]
 
 SCHEME = "https://"
 URL = SCHEME + "typeracerdata.com"
