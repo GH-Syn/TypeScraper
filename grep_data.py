@@ -8,12 +8,6 @@ from bs4 import BeautifulSoup as bs
 from dataclasses import dataclass
 import logging
 
-
-logger = logging.getLogger(__name__)
-logger.setLevel(0)
-logging.basicConfig
-logger.warning("TEST")
-
 LOG_LEVELS = {
     "CRITICAL": "🚨 CRITICAL",
     "ERROR": "❌ ERROR",
