@@ -62,9 +62,11 @@ fn main() -> Result<()> {
     let reader = BufReader::new(file);
     let profile_list: ProfileList = from_reader(reader).unwrap();
 
+    /*
     for (_, profile) in profile_list {
         println!("{}", profile.summarize(&profile));
     }
+    */
     Ok(())
 }
 
