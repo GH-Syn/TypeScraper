@@ -23,21 +23,35 @@ struct Profile {
     name: String,
 }
 
+const DO_SUMMARY_EMOJIS: bool = true;
+
 trait Summary {
     fn summarize(&self, profile: &Profile) -> String;
 }
 
 impl Summary for Profile {
     fn summarize(&self, profile: &Profile) -> String {
-        format!(" 👨 Profile: {}\n 🏎️  Races: {}\n 📅 Latest: {}\n\n 🏆 Win: {}%\n 🎯 Best: {}\n 🏢 Career: {}\n 🐎 Marathon: {} races",
-                profile.racer.yellow().bold(),
-                profile.races.red().bold(),
-                profile.last_race.white().bold(),
-                profile.win_ratio.yellow().bold(),
-                profile.best_race.red().bold(),
-                profile.career.white().bold(),
-                profile.marathon.white().bold(),
-                )
+        if DO_SUMMARY_EMOJIS {
+            format!(" 👨 Profile: {}\n 🏎️  Races: {}\n 📅 Latest: {}\n\n 🏆 Win: {}%\n 🎯 Best: {}\n 🏢 Career: {}\n 🐎 Marathon: {} races",
+                    profile.racer.yellow().bold(),
+                    profile.races.red().bold(),
+                    profile.last_race.white().bold(),
+                    profile.win_ratio.yellow().bold(),
+                    profile.best_race.red().bold(),
+                    profile.career.white().bold(),
+                    profile.marathon.white().bold(),
+                    )
+        } else {
+            format!(" Profile: {}\n Races: {}\n Latest: {}\n\n Win: {}%\n Best: {}\n Career: {}\n Marathon: {} races",
+                    profile.racer.yellow().bold(),
+                    profile.races.red().bold(),
+                    profile.last_race.white().bold(),
+                    profile.win_ratio.yellow().bold(),
+                    profile.best_race.red().bold(),
+                    profile.career.white().bold(),
+                    profile.marathon.white().bold(),
+                    )
+        }
     }
 }
 
