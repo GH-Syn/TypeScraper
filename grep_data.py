@@ -60,8 +60,9 @@ class Profile:
         win_ratio,
         marathon,
         last_race,
-        name,
-    ):
+        name):
+
+        """ This consturctor defines basic profile attributes. """
         self.rank = rank
         self.racer = racer
         self.text_bests = text_bests
@@ -73,7 +74,6 @@ class Profile:
         self.points = points
         self.wins = wins
         self.win_ratio = win_ratio
-        print(last_race)
         year, month, day = last_race.split("-", 3)
         year, month, day = int(year), int(month), int(day)
         self.marathon = marathon
@@ -105,7 +105,6 @@ for profile_ in profiles_as_soup[1:]:
     profile_data_all = profile_.find_all(class_="r")
     profile_data_sum = [i.text for i in profile_data_all]
     profile_data_sum.insert(1, profile_name.text)
-    print(profile_data_sum)
     profile = Profile(
             *profile_data_sum
             )
