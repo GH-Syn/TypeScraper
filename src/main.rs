@@ -29,10 +29,12 @@ trait Summary {
 
 impl Summary for Profile {
     fn summarize(&self, profile: &Profile) -> String {
-        format!(" 🏎️  Races: {}\n\n 📅 Latest: {}\n\n 🏆 Win: {}%",
+        format!(" 🏎️  Races: {}\n\n 📅 Latest: {}\n\n 🏆 Win: {}%\n 🎯 Best: {}",
                 profile.races.red().bold(),
                 profile.last_race.white().bold(),
-                profile.win_ratio.yellow().bold())
+                profile.win_ratio.yellow().bold(),
+                profile.best_race.red().bold(),
+                )
     }
 }
 
