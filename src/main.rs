@@ -39,7 +39,7 @@ impl Summary for Profile {
 type ProfileList = std::collections::BTreeMap<String, Profile>;
 
 fn main() -> Result<()> {
-    let file = File::open("profiles.json").unwrap();
+    let file = File::open("src/profiles.json").unwrap();
     let reader = BufReader::new(file);
     let profile_list: ProfileList = from_reader(reader).unwrap();
 
