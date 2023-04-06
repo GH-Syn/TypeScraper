@@ -1,4 +1,3 @@
-#!ignore(unused_variables)
 use colored::*;
 use serde_json::{Result, from_reader};
 use std::io::BufReader;
@@ -55,6 +54,7 @@ impl Summary for Profile {
     }
 }
 
+// Datatype structure for ProfileList
 type ProfileList = std::collections::BTreeMap<String, Profile>;
 
 fn main() -> Result<()> {
