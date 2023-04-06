@@ -58,8 +58,8 @@ class Profile:
         points,
         wins,
         win_ratio,
-        last_race,
         marathon,
+        last_race,
         name,
     ):
         self.rank = rank
@@ -73,6 +73,7 @@ class Profile:
         self.points = points
         self.wins = wins
         self.win_ratio = win_ratio
+        print(last_race)
         year, month, day = last_race.split("-", 3)
         year, month, day = int(year), int(month), int(day)
         self.marathon = marathon
@@ -102,23 +103,11 @@ profiles_as_soup = soup.find_all("tr")
 for profile_ in profiles_as_soup[1:]:
     profile_name = profile_.find("td", class_="l")
     profile_data_all = profile_.find_all(class_="r")
-    profile_data_all.append(profile_name)
     profile_data_sum = [i.text for i in profile_data_all]
+    profile_data_sum.insert(1, profile_name.text)
+    print(profile_data_sum)
     profile = Profile(
-            best_10=profile_data_sum[12],
-            best_race=profile_data_sum[2],
-            career=profile_data_sum[11],
-            last_race=profile_data_sum[4],
-            marathon=profile_data_sum[13],
-            name=profile_data_sum[5],
-            points=profile_data_sum[1],
-            racer=profile_data_sum[5],
-            races=profile_data_sum[6],
-            rank=profile_data_sum[9],
-            text_bests=profile_data_sum[10],
-            texts=profile_data_sum[3],
-            wins=profile_data_sum[2],
-            win_ratio=profile_data_sum[13]
+            *profile_data_sum
             )
     profiles.append(profile)
 
