@@ -1,3 +1,4 @@
+""" TODO: Add docstring to main file. """
 import sys
 import socket
 import json
@@ -101,14 +102,12 @@ profiles = []
 profiles_as_soup = soup.find_all("tr")
 
 for profile_ in profiles_as_soup[1:]:
-    profile_name = profile_.find("td", class_="l")
-    profile_data_all = profile_.find_all(class_="r")
+    profile_name = profile_.find("td", class_="l")   # profile
+    profile_data_all = profile_.find_all(class_="r") # everything else
     profile_data_sum = [i.text for i in profile_data_all]
     profile_data_sum.insert(1, profile_name.text)
-    profile = Profile(
-            *profile_data_sum
-            )
-    profiles.append(profile)
+    profile = Profile(*profile_data_sum)  # unzips profile_data_sum
+    profiles.append(profile) # Add profile to profiles list
 
 profiles_as_hashmap = {}
 
@@ -136,8 +135,10 @@ if os.path.basename(file) in os.listdir(os.path.dirname(file)):
 else:
     print("Generating data file fresh from source.")
 
+# dump json to open(os.path.join("src", "profiles.json"), "w")
+
 json.dump(profiles_as_hashmap,
-          open(os.path.join("src", "profiles.json"), "w"),
-          sort_keys=True,
-          ensure_ascii=True,
-          indent=4)
+          open(os.path.join("src", "profiles.json"), "w"), # Open profiles.json
+          sort_keys=True,   # set sort keys to true
+          ensure_ascii=True,  # allow automatic indenting
+          indent=4) # set default indent to 4 
