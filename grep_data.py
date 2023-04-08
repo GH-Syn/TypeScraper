@@ -1,13 +1,14 @@
 """ TODO: Add docstring to main file. """
-import sys
-import socket
-import json
-import os
-from datetime import date
-import requests
-from bs4 import BeautifulSoup as bs
 from dataclasses import dataclass
+from datetime import date
+import json
 import logging
+import os
+import socket
+import sys
+
+from bs4 import BeautifulSoup as bs
+import requests
 
 LOG_LEVELS = {
     "CRITICAL": "🚨 CRITICAL",
@@ -24,8 +25,10 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
-[logging.addLevelName(logging.getLevelName(level), emoji)
- for (level, emoji) in LOG_LEVELS.items()]
+[
+    logging.addLevelName(logging.getLevelName(level), emoji)
+    for (level, emoji) in LOG_LEVELS.items()
+]
 
 SCHEME = "https://"
 URL = SCHEME + "typeracerdata.com"
@@ -61,9 +64,9 @@ class Profile:
         win_ratio,
         marathon,
         last_race,
-        name):
-
-        """ This consturctor defines basic profile attributes. """
+        name,
+    ):
+        """This consturctor defines basic profile attributes."""
         self.rank = rank
         self.racer = racer
         self.text_bests = text_bests
@@ -102,12 +105,12 @@ profiles = []
 profiles_as_soup = soup.find_all("tr")
 
 for profile_ in profiles_as_soup[1:]:
-    profile_name = profile_.find("td", class_="l")   # profile
-    profile_data_all = profile_.find_all(class_="r") # everything else
+    profile_name = profile_.find("td", class_="l")  # profile
+    profile_data_all = profile_.find_all(class_="r")  # everything else
     profile_data_sum = [i.text for i in profile_data_all]
     profile_data_sum.insert(1, profile_name.text)
     profile = Profile(*profile_data_sum)  # unzips profile_data_sum
-    profiles.append(profile) # Add profile to profiles list
+    profiles.append(profile)  # Add profile to profiles list
 
 profiles_as_hashmap = {}
 
@@ -137,8 +140,10 @@ else:
 
 # dump json to open(os.path.join("src", "profiles.json"), "w")
 
-json.dump(profiles_as_hashmap,
-          open(os.path.join("src", "profiles.json"), "w"), # Open profiles.json
-          sort_keys=True,   # set sort keys to true
-          ensure_ascii=True,  # allow automatic indenting
-          indent=4) # set default indent to 4 
+json.dump(
+    profiles_as_hashmap,
+    open(os.path.join("src", "profiles.json"), "w"),  # Open profiles.json
+    sort_keys=True,  # set sort keys to true
+    ensure_ascii=True,  # allow automatic indenting
+    indent=4,
+)  # set default indent to 4

@@ -31,21 +31,37 @@
         "win_ratio": "88.74",
         "wins": "3,232"
     },
-    "10.78": {
+    "10.65": {
+        "best_10": "282.28",
+        "best_race": "307.16",
+        "career": "177.20",
+        "last_race": "2023-04-08",
+        "marathon": "1,095",
+        "name": "10.65",
+        "points": "8,745,399.82",
+        "racer": " (flaneur)",
+        "races": "60,891",
+        "rank": "5.",
+        "text_bests": "196.45",
+        "texts": "4,937",
+        "win_ratio": "77.87",
+        "wins": "47,418"
+    },
+    "10.79": {
         "best_10": "212.71",
         "best_race": "220.36",
         "career": "162.42",
-        "last_race": "2023-03-20",
+        "last_race": "2023-04-07",
         "marathon": "608",
-        "name": "10.78",
-        "points": "2,120,581.88",
+        "name": "10.79",
+        "points": "2,120,921.05",
         "racer": "Xeogran (xeogran)",
-        "races": "14,946",
+        "races": "14,949",
         "rank": "41.",
         "text_bests": "170.39",
         "texts": "3,963",
         "win_ratio": "86.54",
-        "wins": "12,934"
+        "wins": "12,937"
     },
     "10.87": {
         "best_10": "229.39",
@@ -82,18 +98,18 @@
     "11.06": {
         "best_10": "264.76",
         "best_race": "316.90",
-        "career": "168.12",
-        "last_race": "2023-04-03",
+        "career": "168.18",
+        "last_race": "2023-04-07",
         "marathon": "487",
         "name": "11.06",
-        "points": "4,963,299.12",
+        "points": "5,000,201.22",
         "racer": "[NTM] Vielle (arc_sec)",
-        "races": "32,929",
-        "rank": "16.",
-        "text_bests": "182.04",
-        "texts": "5,166",
-        "win_ratio": "36.90",
-        "wins": "12,152"
+        "races": "33,158",
+        "rank": "15.",
+        "text_bests": "182.12",
+        "texts": "5,174",
+        "win_ratio": "37.08",
+        "wins": "12,295"
     },
     "11.12": {
         "best_10": "240.46",
@@ -217,7 +233,7 @@
         "points": "536,524.99",
         "racer": "Rrraptor (megaextremist)",
         "races": "3,419",
-        "rank": "15.",
+        "rank": "16.",
         "text_bests": "182.08",
         "texts": "1,965",
         "win_ratio": "87.39",
@@ -383,21 +399,21 @@
         "win_ratio": "77.05",
         "wins": "24,530"
     },
-    "16.89": {
+    "16.88": {
         "best_10": "298.03",
         "best_race": "305.17",
-        "career": "168.73",
-        "last_race": "2023-04-03",
+        "career": "168.76",
+        "last_race": "2023-04-06",
         "marathon": "405",
-        "name": "16.89",
-        "points": "2,110,556.54",
+        "name": "16.88",
+        "points": "2,117,196.30",
         "racer": "youtube.com/@shazNO (shazman)",
-        "races": "17,570",
+        "races": "17,613",
         "rank": "21.",
-        "text_bests": "180.07",
-        "texts": "4,646",
+        "text_bests": "180.12",
+        "texts": "4,648",
         "win_ratio": "69.45",
-        "wins": "12,203"
+        "wins": "12,232"
     },
     "17.00": {
         "best_10": "291.86",
@@ -415,21 +431,21 @@
         "win_ratio": "56.15",
         "wins": "4,085"
     },
-    "18.04": {
+    "18.05": {
         "best_10": "329.36",
         "best_race": "340.43",
-        "career": "193.33",
-        "last_race": "2023-03-31",
+        "career": "193.36",
+        "last_race": "2023-04-08",
         "marathon": "2,021",
-        "name": "18.04",
-        "points": "3,564,129.73",
+        "name": "18.05",
+        "points": "3,566,957.20",
         "racer": "joshu (joshua728)",
-        "races": "25,265",
+        "races": "25,280",
         "rank": "1.",
-        "text_bests": "219.02",
-        "texts": "7,403",
-        "win_ratio": "89.53",
-        "wins": "22,620"
+        "text_bests": "219.08",
+        "texts": "7,418",
+        "win_ratio": "89.54",
+        "wins": "22,635"
     },
     "20.19": {
         "best_10": "269.23",
@@ -447,53 +463,53 @@
         "win_ratio": "56.69",
         "wins": "61,942"
     },
-    "20.53": {
+    "20.52": {
         "best_10": "338.87",
         "best_race": "365.05",
-        "career": "143.76",
-        "last_race": "2023-01-31",
+        "career": "143.79",
+        "last_race": "2023-04-05",
         "marathon": "921",
-        "name": "20.53",
-        "points": "4,958,805.22",
+        "name": "20.52",
+        "points": "4,968,357.54",
         "racer": "discord.gg/typeracer (landa...",
-        "races": "40,596",
+        "races": "40,666",
         "rank": "34.",
-        "text_bests": "171.86",
+        "text_bests": "171.87",
         "texts": "6,717",
-        "win_ratio": "74.27",
-        "wins": "30,149"
+        "win_ratio": "74.30",
+        "wins": "30,215"
     },
     "20.87": {
         "best_10": "350.23",
         "best_race": "388.09",
-        "career": "143.82",
-        "last_race": "2023-04-05",
+        "career": "143.85",
+        "last_race": "2023-04-08",
         "marathon": "6,520",
         "name": "20.87",
-        "points": "39,885,225.65",
+        "points": "39,930,431.21",
         "racer": " (keegant)",
-        "races": "752,013",
+        "races": "753,122",
         "rank": "29.",
-        "text_bests": "173.98",
-        "texts": "7,410",
-        "win_ratio": "89.86",
-        "wins": "675,757"
+        "text_bests": "174.03",
+        "texts": "7,450",
+        "win_ratio": "89.87",
+        "wins": "676,866"
     },
     "21.87": {
         "best_10": "319.51",
         "best_race": "338.74",
-        "career": "130.09",
-        "last_race": "2023-04-06",
+        "career": "130.11",
+        "last_race": "2023-04-07",
         "marathon": "3,500",
         "name": "21.87",
-        "points": "11,492,692.60",
+        "points": "11,500,043.72",
         "racer": "Shoemaker-Levy 9 (atthetop)",
-        "races": "136,462",
+        "races": "136,534",
         "rank": "18.",
-        "text_bests": "181.35",
-        "texts": "7,424",
-        "win_ratio": "61.89",
-        "wins": "84,455"
+        "text_bests": "181.34",
+        "texts": "7,449",
+        "win_ratio": "61.88",
+        "wins": "84,485"
     },
     "22.89": {
         "best_10": "451.41",
@@ -511,21 +527,21 @@
         "win_ratio": "81.37",
         "wins": "244,118"
     },
-    "6.53": {
+    "6.52": {
         "best_10": "212.02",
         "best_race": "231.24",
-        "career": "171.22",
-        "last_race": "2023-04-04",
+        "career": "171.21",
+        "last_race": "2023-04-05",
         "marathon": "0",
-        "name": "6.53",
-        "points": "244,099.53",
+        "name": "6.52",
+        "points": "246,160.84",
         "racer": " (va1i)",
-        "races": "1,683",
+        "races": "1,700",
         "rank": "36.",
-        "text_bests": "171.66",
-        "texts": "1,106",
-        "win_ratio": "84.97",
-        "wins": "1,430"
+        "text_bests": "171.67",
+        "texts": "1,110",
+        "win_ratio": "84.94",
+        "wins": "1,444"
     },
     "6.92": {
         "best_10": "205.04",
@@ -703,22 +719,6 @@
         "win_ratio": "87.09",
         "wins": "58,575"
     },
-    "9.69": {
-        "best_10": "216.83",
-        "best_race": "224.11",
-        "career": "165.90",
-        "last_race": "2023-04-06",
-        "marathon": "165",
-        "name": "9.69",
-        "points": "630,206.41",
-        "racer": "https://youtu.be/YOZqP-fYZW...",
-        "races": "4,501",
-        "rank": "37.",
-        "text_bests": "171.44",
-        "texts": "2,011",
-        "win_ratio": "86.16",
-        "wins": "3,878"
-    },
     "9.71": {
         "best_10": "237.22",
         "best_race": "255.56",
@@ -734,6 +734,22 @@
         "texts": "3,626",
         "win_ratio": "93.05",
         "wins": "20,678"
+    },
+    "9.72": {
+        "best_10": "217.52",
+        "best_race": "224.11",
+        "career": "165.98",
+        "last_race": "2023-04-06",
+        "marathon": "165",
+        "name": "9.72",
+        "points": "635,381.88",
+        "racer": "https://youtu.be/YOZqP-fYZW...",
+        "races": "4,542",
+        "rank": "37.",
+        "text_bests": "171.54",
+        "texts": "2,021",
+        "win_ratio": "86.13",
+        "wins": "3,912"
     },
     "9.79": {
         "best_10": "232.87",
@@ -755,16 +771,16 @@
         "best_10": "222.49",
         "best_race": "236.91",
         "career": "159.55",
-        "last_race": "2023-04-05",
+        "last_race": "2023-04-07",
         "marathon": "231",
         "name": "9.94",
-        "points": "2,470,548.99",
+        "points": "2,473,301.73",
         "racer": "Ibexus (ibexus)",
-        "races": "17,541",
+        "races": "17,562",
         "rank": "40.",
-        "text_bests": "170.63",
+        "text_bests": "170.64",
         "texts": "3,097",
         "win_ratio": "90.06",
-        "wins": "15,798"
+        "wins": "15,817"
     }
 }
