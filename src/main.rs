@@ -78,7 +78,6 @@ fn wipe() {
 }
 
 fn main() -> Result<()> {
-    let name = String::new();
     let file_path: &str = "src/profiles.json";
     let file = File::open(file_path).unwrap();
     let reader = io::BufReader::new(file);
@@ -89,19 +88,20 @@ fn main() -> Result<()> {
         profile_map.insert(profile.name.to_string(), profile);
     }
 
-    println!("Please enter the name or ID of a racer.");
-    println!("Alternatively, enter 'q' to quit.\n");
-
-    let name = String::to_string(&name);
     loop {
-        io::stdin()
-            .read_line(&mut name.trim().to_string())
-            .expect("That\'s not a valid name 😕");
+        println!("Please enter the name or ID of a racer.");
+        println!("Alternatively, enter 'q' to quit.\n");
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
 
+        let name = input.trim();
 
-        if name == "q" {
-            say_bye();
-            wipe();
+        match name {
+            "q" => {
+                say_bye();
+                wipe();
+            },
+            _ => continue
         };
 
         if profile_map.len() > 0 {
@@ -113,7 +113,7 @@ fn main() -> Result<()> {
                         .summarize(profile);
                 }
             }
-        } 
+        }
         prompt_refresh(name.to_string());
     }
 }
