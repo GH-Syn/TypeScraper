@@ -59,10 +59,7 @@ impl Summary for Profile {
 type ProfileList = std::collections::BTreeMap<String, Profile>;
 
 fn prompt_refresh(name: String) {
-    print!(
-        "Sorry, {} doesn\'t seem to be in the database.\n",
-        &name
-    );
+    print!("Sorry, {} doesn\'t seem to be in the database.\n", &name);
 }
 
 /// "And now, my time is near..." - Frank Sinatra
