@@ -60,7 +60,7 @@ type ProfileList = std::collections::BTreeMap<String, Profile>;
 
 fn prompt_refresh(name: String) {
     print!(
-        "Sorry, {} doesn\'t seem to be in the database. Would you like to refresh it?",
+        "Sorry, {} doesn\'t seem to be in the database.\n",
         &name
     );
 }
@@ -88,9 +88,9 @@ fn main() -> Result<()> {
         profile_map.insert(profile.name.to_string(), profile);
     }
 
+    println!("Please enter the name or ID of a racer.");
+    println!("Alternatively, enter 'q' to quit.\n");
     loop {
-        println!("Please enter the name or ID of a racer.");
-        println!("Alternatively, enter 'q' to quit.\n");
         let mut input = String::new();
         io::stdin().read_line(&mut input).unwrap();
 
@@ -100,20 +100,21 @@ fn main() -> Result<()> {
             "q" => {
                 say_bye();
                 wipe();
-            },
-            _ => continue
-        };
-
-        if profile_map.len() > 0 {
-            for (key, profile) in profile_map.iter() {
-                if profile.racer.contains(&name) {
-                    profile_map
-                        .get(key)
-                        .expect("Profile not eligable for index.")
-                        .summarize(profile);
+            }
+            _ => {
+                if profile_map.len() > 0 {
+                    for (key, profile) in profile_map.iter() {
+                        if profile.racer.contains(&name) {
+                            profile_map
+                                .get(key)
+                                .expect("Profile not eligable for index.")
+                                .summarize(profile);
+                        }
+                    }
                 }
             }
-        }
+        };
+
         prompt_refresh(name.to_string());
     }
 }
