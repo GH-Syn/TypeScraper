@@ -93,13 +93,12 @@ fn main() -> Result<()> {
 
         let name = input.trim();
 
-        match name {
-            "q" => {
-                say_bye();
-                wipe();
-            }
-            _ => {
-                if profile_map.len() > 0 {
+        if let "q" = name {
+            say_bye();
+            wipe();
+        } else {
+            match profile_map.len() > 0 {
+                true => {
                     for (key, profile) in profile_map.iter() {
                         if profile.racer.contains(&name) {
                             profile_map
@@ -109,6 +108,7 @@ fn main() -> Result<()> {
                         }
                     }
                 }
+                false => (),
             }
         };
 
